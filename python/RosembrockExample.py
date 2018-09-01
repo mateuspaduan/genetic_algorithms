@@ -23,7 +23,7 @@ class Rosembrock(object):
         
         
     def Rosembrock_Function(self, x1,x2):
-        return (1.0-x1)**2 + 100.0*(x2-x1**2)**2 
+        return (1.0-x1)**2 + (x2-x1**2)**2 
         
     def x1Real(self, x1Decimal):
         Precision = (self.x1_max - self.x1_min)/((2.0**(self.individual_size/2)) - 1)
@@ -37,11 +37,9 @@ class Rosembrock(object):
         
     def initPopulation(self, num_individuals):
         
-        num_individuals
-        
         population = []
         #Cria todos os indiviudos e insere na populacao inicial
-        for i in range(num_individuals):
+        for _ in range(num_individuals):
             individual = np.random.binomial(1,0.5,self.individual_size)
             #print(individual)
             population.append(individual.tolist())
